@@ -12,5 +12,8 @@ def call_api():
   api_client.crm.objects.basic_api.get_page(object_type='contact')
 
 for _ in range(1000):
-  thread = threading.Thread(target=call_api)
-  thread.start()
+  try:
+    thread = threading.Thread(target=call_api)
+    thread.start()
+  except hubspot.crm.objects.exceptions.ApiException as e:
+    print(e)
