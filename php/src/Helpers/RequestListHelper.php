@@ -4,8 +4,8 @@ namespace Helpers;
 
 class RequestListHelper
 {
-    const LIST_NAME = 'RequestList';
-    const LIMIT = 90;
+    public const LIST_NAME = 'RequestList';
+    public const LIMIT = 90;
 
     public static function ableToPerform(): bool
     {

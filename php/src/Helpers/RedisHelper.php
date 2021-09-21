@@ -6,7 +6,7 @@ use Predis\Client;
 
 class RedisHelper
 {
-    protected static $client = null;
+    protected static $client;
 
     public static function getClient(): Client
     {

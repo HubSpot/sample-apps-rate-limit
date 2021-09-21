@@ -18,6 +18,7 @@ services:
             REDIS_PORT: 6379
         volumes:
             - ./src:/app/src
+            - ./.php-cs-fixer.php:/app/.php-cs-fixer.php
     redis:
         container_name: php-rate-limit-app-redis
         image: redis:latest

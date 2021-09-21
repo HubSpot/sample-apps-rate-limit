@@ -6,10 +6,10 @@ $finder = PhpCsFixer\Finder::create()
     ->notPath('/cache/')
 ;
 
-return PhpCsFixer\Config::create()
-    ->setFinder($finder)
-    ->setRules([
+$config = new PhpCsFixer\Config();
+return $config->setRules([
         '@PSR2' => true,
         '@PhpCsFixer' => true,
     ])
+    ->setFinder($finder)
 ;
