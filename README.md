@@ -12,7 +12,13 @@ This is a sample app for the HubSpot [client libraries](https://developers.hubsp
 cp node/.env.template node/.env
 ```
 
-5. Paste your HubSpot API Key as the value for HUBSPOT_API_KEY in .env
+5. Specify authorization data in .env:
+    
+    - Paste your HubSpot API Key as the value for HUBSPOT_API_KEY
+    
+    or
+    
+    - Paste HUBSPOT_CLIENT_ID and HUBSPOT_CLIENT_SECRET for OAuth
 
 6. Follow the language instructions on how to run. For example, if you want to run the Node server:
 
