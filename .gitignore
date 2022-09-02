@@ -6,3 +6,4 @@ node_modules/
 
 #Php
 vendor/
+.php-cs-fixer.cache
