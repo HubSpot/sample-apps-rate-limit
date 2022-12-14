@@ -2,18 +2,19 @@ require_relative 'config'
 
 class Cli
   def run
+    Thread.abort_on_exception = true
+    Thread.report_on_exception = true
     1000.times do
       Thread.new { call_api }
+      p :*
     end
   end
 
   private
 
   def call_api
-    api = Hubspot::Crm::Objects::BasicApi.new
-    api.get_page('contact', auth_names: 'hapikey')
-  rescue Hubspot::Crm::Objects::ApiError => e
-    p e
+    client = Hubspot::Client.new(access_token: access_token)
+    api = client.crm.contacts.basic_api.get_page
   end
 end
 
