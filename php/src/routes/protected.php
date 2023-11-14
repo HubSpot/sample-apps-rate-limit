@@ -2,4 +2,5 @@
 
 return [
     '/readme',
+    '/oauth/logout',
 ];
