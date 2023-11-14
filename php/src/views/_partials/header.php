@@ -1,5 +1,6 @@
 <?php
 use Helpers\OAuth2Helper;
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

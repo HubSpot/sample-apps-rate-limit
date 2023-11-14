@@ -6,14 +6,16 @@ use Helpers\HubspotClientHelper;
 use Helpers\OAuth2Helper;
 use Helpers\RequestListHelper;
 
-function checkOAuth() {
+function checkOAuth()
+{
     if (!OAuth2Helper::isAuthenticated()) {
         echo 'In order to continue please go to http://localhost:8999 and authorize via OAuth.'.PHP_EOL;
-        exit();
+
+        exit;
     }
 }
 
-//checking PROCESS_COUNT if it isn't set up it throw exception
+// checking PROCESS_COUNT if it isn't set up it throw exception
 getEnvOrException('PROCESS_COUNT');
 
 if (!OAuth2Helper::isAuthenticated()) {
@@ -42,7 +44,7 @@ while (true) {
 
     echo 'Able To Perform = '.($able ? 'yes' : 'no').PHP_EOL;
 
-    //Inside loop to avoid token expiration.
+    // Inside loop to avoid token expiration.
     $hubspot = HubspotClientHelper::createFactory();
 
     RequestListHelper::addTimestamp();
