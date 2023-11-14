@@ -4,10 +4,10 @@ Currently, this app focuses on demonstrating the rate limit mechanism. It will b
 
 Please see the documentation on [Creating an app in HubSpot](https://developers.hubspot.com/docs-beta/creating-an-app)
 
-### HubSpot Public API endpoints used in this application
+## HubSpot Public API endpoints used in this application
 
-  - [Contacts](https://developers.hubspot.com/docs-beta/crm/contacts)
-  - [OAuth](https://developers.hubspot.com/docs-beta/working-with-oauth)
+- [Contacts](https://developers.hubspot.com/docs-beta/crm/contacts)
+- [OAuth](https://developers.hubspot.com/docs-beta/working-with-oauth)
 
 ### Setup App
 
@@ -17,11 +17,7 @@ Make sure you have [Docker Compose](https://docs.docker.com/compose/) installed.
 
 1. Copy .env.template to .env
 2. Specify authorization data in .env:
-    
-    - Paste your HubSpot API Key as the value for HUBSPOT_API_KEY
-    
-    or
-    
+
     - Paste HUBSPOT_CLIENT_ID and HUBSPOT_CLIENT_SECRET for OAuth
 
 ### Running
@@ -31,7 +27,8 @@ The best way to run this project (with the least configuration), is using docker
 ```bash
 docker-compose up -d --build
 ```
-You should now be able to navigate to [http://localhost:8999](http://localhost:8999). 
+
+You should now be able to navigate to [http://localhost:8999](http://localhost:8999).
 Firstly you will need to authorize via OAuth there.
 Than you can to go to the terminal window and start the following command in the application root
 

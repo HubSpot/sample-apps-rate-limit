@@ -16,7 +16,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 RUN mkdir -p /app
 ADD ./composer.json /app
-#ADD ./composer.lock /app
+ADD ./composer.lock /app
 
 WORKDIR /app
 RUN /usr/local/bin/composer install
