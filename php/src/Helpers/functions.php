@@ -3,7 +3,7 @@
 /**
  * @return null|mixed
  */
-function getEnvOrException(string $name)
+function getEnvOrException(string $name): string
 {
     if (empty($_ENV[$name])) {
         throw new \Exception("Please specify {$name} in .env");

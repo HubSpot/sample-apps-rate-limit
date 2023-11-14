@@ -6,9 +6,15 @@ use Helpers\RedisHelper;
 
 class TokensRepository
 {
-    public static function getToken()
+    public static function getToken(): ?array
     {
-        return (array) json_decode(RedisHelper::getClient()->get('token'));
+        $token = RedisHelper::getClient()->get('token');
+
+        if (empty($token)) {
+            return null;
+        }
+
+        return (array) json_decode($token);
     }
 
     public static function save(array $token)

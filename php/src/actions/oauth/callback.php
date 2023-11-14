@@ -6,7 +6,7 @@ use HubSpot\Factory;
 use Repositories\TokensRepository;
 
 // https://developers.hubspot.com/docs/api/working-with-oauth
-$token = Factory::create()->auth()->oAuth()->tokensApi()->createToken(
+$token = Factory::create()->auth()->oAuth()->tokensApi()->create(
     'authorization_code',
     $_GET['code'],
     OAuth2Helper::getRedirectUri(),

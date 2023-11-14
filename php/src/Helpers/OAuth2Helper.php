@@ -48,9 +48,8 @@ class OAuth2Helper
         if (empty($token)) {
             throw new \Exception('Please authorize via OAuth2');
         }
-
         if (time() > $token['expires_at']) {
-            $response = Factory::create()->auth()->oAuth()->tokensApi()->createToken(
+            $response = Factory::create()->auth()->oAuth()->tokensApi()->create(
                 'refresh_token',
                 null,
                 null,
@@ -63,6 +62,7 @@ class OAuth2Helper
                 'refresh_token' => $response->getRefreshToken(),
                 'access_token' => $response->getAccessToken(),
                 'expires_in' => $response->getExpiresIn(),
+                'expires_at' => static::getExpiresAt($response->getExpiresIn()),
             ]);
 
             return $response->getAccessToken();
