@@ -1,4 +1,5 @@
 <?php
+
 use Repositories\TokensRepository;
 
 TokensRepository::remove();

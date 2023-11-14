@@ -6,7 +6,8 @@ use Helpers\RedisHelper;
 
 class TokensRepository
 {
-    const TOKEN_KEY = "token";
+    public const TOKEN_KEY = 'token';
+
     public static function getToken(): ?array
     {
         $token = RedisHelper::getClient()->get(static::TOKEN_KEY);
