@@ -4,9 +4,9 @@
         <h3>Workers are started</h3>
         <h4>Please note this app started <?php echo getEnvOrException('PROCESS_COUNT'); ?> workers in order to reach rate limit's border faster.</h4>
         <h3>In order to continue please go to the terminal and run the following command</h3>
-        <pre id="command">docker-compose exec web php /app/src/console/example.php</pre>
-        <button class="button-primary" onclick="copyCommand()">Copy</button>
+        <pre id="copyText">docker-compose exec web php /app/src/console/example.php</pre>
+        <button class="button-primary" id="copyBtn">Copy</button>
     </div>
 </div>
-<script type="text/javascript" src="/js/readme.js?<?php echo filemtime('./js/readme.js'); ?>"></script>
+<script type="text/javascript" src="/js/copy.js?<?php echo filemtime('./js/copy.js'); ?>"></script>
 <?php include __DIR__.'/_partials/footer.php'; ?>
