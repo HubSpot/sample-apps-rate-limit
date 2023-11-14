@@ -8,4 +8,5 @@
         <button class="button-primary" onclick="copyCommand()">Copy</button>
     </div>
 </div>
+<script type="text/javascript" src="/js/readme.js?<?php echo filemtime('./js/readme.js'); ?>"></script>
 <?php include __DIR__.'/_partials/footer.php'; ?>
