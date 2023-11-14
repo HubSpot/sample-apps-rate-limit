@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+use Helpers\OAuth2Helper;
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +23,11 @@
                     <a class="navigation-link" href="/readme">Read Me</a>
                 </li>
                 <li class="navigation-item">
+                    <?php if (OAuth2Helper::isAuthenticated()) { ?>
+                    <a class="navigation-link" href="/oauth/logout">Logout</a>
+                    <?php } else { ?>
                     <a class="navigation-link" href="/oauth/login">OAuth2</a>
+                    <?php } ?>
                 </li>
             </ul>
         </div>

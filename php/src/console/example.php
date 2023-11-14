@@ -6,6 +6,13 @@ use Helpers\HubspotClientHelper;
 use Helpers\OAuth2Helper;
 use Helpers\RequestListHelper;
 
+function checkOAuth() {
+    if (!OAuth2Helper::isAuthenticated()) {
+        echo 'In order to continue please go to http://localhost:8999 and authorize via OAuth.'.PHP_EOL;
+        exit();
+    }
+}
+
 //checking PROCESS_COUNT if it isn't set up it throw exception
 getEnvOrException('PROCESS_COUNT');
 
@@ -30,6 +37,7 @@ while (true) {
         echo 'Sleeping...'.PHP_EOL;
         sleep(10);
         $able = RequestListHelper::ableToPerform();
+        checkOAuth();
     }
 
     echo 'Able To Perform = '.($able ? 'yes' : 'no').PHP_EOL;

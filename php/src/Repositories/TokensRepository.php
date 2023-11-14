@@ -6,9 +6,10 @@ use Helpers\RedisHelper;
 
 class TokensRepository
 {
+    const TOKEN_KEY = "token";
     public static function getToken(): ?array
     {
-        $token = RedisHelper::getClient()->get('token');
+        $token = RedisHelper::getClient()->get(static::TOKEN_KEY);
 
         if (empty($token)) {
             return null;
@@ -19,6 +20,11 @@ class TokensRepository
 
     public static function save(array $token)
     {
-        RedisHelper::getClient()->set('token', json_encode($token));
+        RedisHelper::getClient()->set(static::TOKEN_KEY, json_encode($token));
+    }
+
+    public static function remove()
+    {
+        RedisHelper::getClient()->del(static::TOKEN_KEY);
     }
 }
